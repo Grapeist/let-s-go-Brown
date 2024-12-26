@@ -140,9 +140,9 @@ PalletTownPikachuBattleScript:
 	ld [wJoyIgnore], a
 	xor a
 	ld [wListScrollOffset], a
-	ld a, BATTLE_TYPE_PIKACHU
+	ld a, BATTLE_TYPE_EEVEE
 	ld [wBattleType], a
-	ld a, STARTER_PIKACHU
+	ld a, STARTER_EEVER
 	ld [wCurOpponent], a
 	ld a, 5
 	ld [wCurEnemyLevel], a
