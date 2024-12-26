@@ -227,9 +227,9 @@ OaksLabRivalTakesPokeballScript:
 	ld a, SPRITE_FACING_UP
 	ldh [hSpriteFacingDirection], a
 	call SetSpriteFacingDirectionAndDelay
-	ld a, RIVAL_STARTER_JOLTEON
+	ld a, RIVAL_STARTER_RAICHU
 	ld [wRivalStarter], a
-	ld a, EEVEE
+	ld a, PIKACHU
 	ld [wNamedObjectIndex], a
 	call GetMonName
 	ld a, ~(A_BUTTON | B_BUTTON)
@@ -277,7 +277,7 @@ OaksLabPlayerWalksToOakScript:
 	ld [wSimulatedJoypadStatesIndex], a
 .asm_1c5a6
 	call StartSimulatingJoypadStates
-	ld a, SCRIPT_OAKSLAB_PLAYER_RECEIVES_PIKACHU
+	ld a, SCRIPT_OAKSLAB_PLAYER_RECEIVES_EEVEE
 	ld [wOaksLabCurScript], a
 	ret
 
@@ -868,7 +868,7 @@ OaksLabOak1Text:
 .give_poke_balls
 	CheckAndSetEvent EVENT_GOT_POKEBALLS_FROM_OAK
 	jr nz, .come_see_me_sometimes
-	lb bc, POKE_BALL, 5
+	lb bc, POKE_BALL, 30
 	call GiveItem
 	ld hl, .GivePokeballsText
 	call PrintText
@@ -1016,7 +1016,7 @@ OaksLabRivalTakesText5:
 
 OaksLabPlayerReceivedMonText:
 	text_asm
-	ld a, STARTER_PIKACHU
+	ld a, STARTER_EEVEE
 	ld [wPlayerStarter], a
 	ld [wNamedObjectIndex], a
 	call GetMonName
@@ -1030,7 +1030,7 @@ OaksLabPlayerReceivedMonText:
 	ld [wMonDataLocation], a
 	ld a, 5
 	ld [wCurEnemyLevel], a
-	ld a, STARTER_PIKACHU
+	ld a, STARTER_EEVEE
 	ld [wPokedexNum], a
 	ld [wCurPartySpecies], a
 	call AddPartyMon
